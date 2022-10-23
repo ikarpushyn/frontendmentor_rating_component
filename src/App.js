@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Container from './components/Container/Container';
+import MainCard from './components/MainCard/MainCard';
+import Modal from './components/Modal/Modal';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isShow, setIsShow] = useState(false);
+	const [stars, setStars] = useState(0);
+
+	const toggleShow = (rating) => {
+		if (rating === 0) {
+			return;
+		}
+		setIsShow(!isShow);
+		console.log(rating);
+		setStars(rating);
+	};
+
+	return (
+		<Container>
+			{!isShow && <MainCard toggleShow={toggleShow} />}
+			<Modal stars={stars} />
+		</Container>
+	);
 }
 
 export default App;

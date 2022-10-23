@@ -1,0 +1,23 @@
+button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 5px;
+	height: 35px;
+	width: 35px;
+	color: orange;
+	border-radius: 50px;
+	background-color: rgba(128, 128, 128, 0.46);
+}
+.on {
+	color: orange;
+}
+.off {
+	color: #ccc;
+}
+
+.star-rating {
+	display: flex;
+	justify-content: space-around;
+}
